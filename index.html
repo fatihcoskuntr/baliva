@@ -1,396 +1,179 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balın Büyülü Dünyası</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Genel Stil Ayarları */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #fff8e1; /* Sarımsı arka plan */
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Katip Balları</title>
 
-        /* Başlık stili */
-        h1, h2, h3 {
-            color: #f1c40f; /* Sarı renk */
-            text-align: center;
-        }
-        {
+<style>
+
+/* GENEL */
+body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(to bottom, #fff8e1, #fff);
+    margin: 0;
+    background: linear-gradient(to bottom, #fff8e1, #ffffff);
 }
-        .grid-container {
+
+/* BAŞLIK */
+h1 {
+    text-align: center;
+    font-size: 3em;
+    color: #f39c12;
+    margin-top: 20px;
+}
+
+/* MENÜ */
+nav {
+    text-align: center;
+    background: #f39c12;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* GRID SİSTEM */
+.grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 sütun */
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     max-width: 1200px;
-    margin: auto;
+    margin: 40px auto;
     padding: 20px;
 }
-        /* Tablet */
+
+/* KART */
+.content-box {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.content-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.content-box img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* METİN */
+.content-box p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* BUTON */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #f39c12;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e67e22;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    background: #f39c12;
+    color: white;
+    padding: 20px;
+}
+
+/* MOBİL */
 @media (max-width: 992px) {
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-        .content-box {
-    text-align: center;
-    height: 100%;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
 
-.content-box:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-}
-        .content-box {
-    text-align: center;
-    height: 100%;
-}
-
-.content-box img {
-    width: 100%;
-    max-width: 100%;
-}
-
-/* Telefon */
 @media (max-width: 600px) {
     .grid-container {
         grid-template-columns: 1fr;
     }
 }
 
-/* Sayfa genişliğini sınırla */
-section {
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* Daha modern kutular */
-.content-box {
-    background-color: #fff;
-    padding: 25px;
-    margin: 30px auto;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
-}
-
-.content-box:hover {
-    transform: translateY(-5px);
-}
-
-        h1 {
-            font-size: 3em;
-            text-decoration: underline;
-            font-weight: bold;
-        }
-
-        h2 {
-            font-size: 2.5em;
-            margin-top: 40px;
-        }
-
-        h3 {
-            font-size: 2em;
-            margin-top: 30px;
-        }
-
-        /* Menü stili */
-        nav {
-            text-align: center;
-            background-color: #f39c12; /* Sarı renk */
-            padding: 15px;
-            margin-bottom: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            font-size: 1.2em;
-            color: white;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #e67e22;
-        }
-
-        /* Resim stili */
-     img {
-    width: 60%;          /* Küçültür */
-    max-width: 500px;    /* En fazla bu kadar büyür */
-    height: auto;
-    display: block;
-    margin: 20px auto;   /* Ortalar */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-        .row {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap; /* mobilde alt alta düşer */
-}
-
-.row img {
-    width: 45%;
-    max-width: 400px;
-}
-        h1 {
-    font-size: 3em;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-}
-        .image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-}
-
-.image-grid img {
-    width: 100%;
-}
-
-.row p {
-    width: 50%;
-}
-        
-
-        /* Paragraf ve açıklama */
-        p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            max-width: 900px;
-            margin: 0 auto 40px;
-            text-align: justify;
-        }
-
-        /* İçerik ve kutu stili */
-        .content-box {
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            margin-bottom: 40px;
-        }
-
-        .content-box h3 {
-            color: #f39c12;
-        }
-
-        .content-box p {
-            font-size: 1.1em;
-            color: #555;
-        }
-
-        /* Footer stili */
-        footer {
-            text-align: center;
-            background-color: #f39c12;
-            padding: 20px;
-            color: white;
-            margin-top: 40px;
-        }
-
-        /* İletişim kısmı */
-        #iletisim {
-            background-color: #f1c40f;
-            padding: 30px;
-            margin-top: 50px;
-            text-align: center;
-            color: white;
-        }
-
-        #iletisim a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        #iletisim a:hover {
-            color: #e67e22;
-        }
-        @media (max-width: 768px) {
-    .row {
-        flex-direction: column;
-    }
-
-    .row img,
-    .row p {
-        width: 100%;
-    }
-            nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-radius: 0 0 15px 15px;
-}
-
-nav a {
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    background-color: white;
-    color: #f39c12;
-}
-            .btn {
-    background-color: #f39c12;
-    color: white;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 8px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: 0.3s;
-}
-            .more-text {
-    display: none;
-}
-
-.btn:hover {
-    background-color: #e67e22;
-}
-}
-    </style>
+</style>
 </head>
+
 <body>
 
-    <!-- Sayfa Başlığı ve Menü -->
-    <header>
-        <h1>Balın Büyülü Dünyası</h1>
-        <nav>
-            <a href="#bal-nedir">Bal Nedir?</a>
-            <a href="#aricilik">Arıcılık Nedir?</a>
-            <a href="#arilarin-olumu">Arılar Nasıl Oluşur?</a>
-            <a href="#bali-tarihi">Balın Tarihi</a>
-            <a href="#faydalar">Balın Faydaları</a>
-            <a href="#polen">Polen Nedir?</a>
-            <a href="#propolis">Propolis Nedir?</a>
-            <a href="#bagisiklik">Bağışıklık Sistemi</a>
-            <a href="#iletisim">İletişim</a>
-        </nav>
-    </header>
+<h1>🍯 Katip Balları</h1>
 
-    <!-- Bal Nedir? -->
-    <section id="bal-nedir" class="content-box">
-        <h2>Bal Nedir?</h2>
-        <img src="bal_1.jpg" alt="Bal resmi">
-        <p>Bal, arıların çiçeklerden topladığı nektarın...
-             <span class="more-text">Bal, arıların çiçeklerden topladığı nektarın arıların sindirim sisteminde kimyasal değişime uğraması sonucu oluşan tatlı, yapışkan bir üründür. Doğal olarak şeker, su, vitaminler, mineraller ve antioksidanlar içerir. Bal, tarih boyunca besin, şifa kaynağı ve tatlandırıcı olarak kullanılmıştır.</span>
-        </p>
-   <button class="btn" onclick="toggleText(this)">Devamını Oku</button>
-    </section>
- 
-    <!-- Arıcılık Nedir? -->
-    <section id="aricilik" class="content-box">
-        <h2>Arıcılık Nedir?</h2>
-        <img src="bal2.jpg" alt="Arıcılık resmi">
-        <p>Arıcılık, arıların bal, polen, propolis ve arı sütü gibi ürünlerini elde etmek amacıyla yapılan bir tarım faaliyetidir. Arıcılar, bal üretim sürecini yönetir, arıların sağlığını korur ve onları verimli hale getirmek için çeşitli teknikler kullanır.</p>
-    </section>
+<nav>
+    <a href="#">Ana Sayfa</a>
+    <a href="#">Ürünler</a>
+    <a href="#">İletişim</a>
+</nav>
 
-    <!-- Arılar Nasıl Oluşur? -->
-    <section id="arilarin-olumu" class="content-box">
-        <h2>Arılar Nasıl Oluşur?</h2>
-        <img src="bal3.jpg" alt="Arıların oluşumu">
-        <p>Arılar, kraliçe arı tarafından yumurtlanan yumurtalardan gelişir. Bu yumurtalar, larva evresine geçmeden önce belirli bir süre petek hücrelerinde beslenir. Farklı besinlerle (özellikle arı sütü) beslenen larvalar, kraliçe arı, işçi arı veya erkek arı (dron) olarak gelişir.</p>
-    </section>
+<div class="grid-container">
 
-    <!-- Balın Tarihi -->
-    <section id="bali-tarihi" class="content-box">
-        <h2>Balın Tarihi</h2>
-        <img src="bal4.jpg" alt="Balın tarihi">
-        <p>Bal, tarih boyunca çok değerli bir ürün olmuştur. Antik Mısırlılar, Yunanlılar ve Romalılar balı hem besin hem de ilaç olarak kullanmışlardır. Mısırlılar, balı mumyalama işlemlerinde de kullanmışlardır. Bal, zamanla geleneksel tıpta önemli bir yer edinmiş ve halk arasında doğal şifa kaynağı olarak bilinmiştir.</p>
-    </section>
-
-    <!-- Balın Faydaları -->
-    <section id="faydalar" class="content-box">
-        <h2>Balın Faydaları</h2>
-        <img src="bal5.jpg" alt="Balın faydaları">
-        <p>Bal, güçlü bir antioksidan kaynağıdır, bağışıklık sistemini güçlendirir, sindirim sistemini rahatlatır ve cilt sağlığını iyileştirir. Ayrıca bal, yaraların iyileşmesine yardımcı olur ve enerji verir. Düzenli olarak tüketildiğinde kalp sağlığını destekler ve kolesterolü dengeler.</p>
-    </section>
-
-    <!-- Polen Nedir? -->
-    <section id="polen" class="content-box">
-        <h2>Polen Nedir?</h2>
-        <img src="bal6.jpg" alt="Polen resmi">
-        <p>Polen, çiçekli bitkilerin erkek üreme hücreleri olup, çiçeklerin tozlaşmasına yardımcı olur. Arılar, bu poleni toplayıp kovana taşır. Polenin zengin bir vitamin, mineral ve protein kaynağı olduğu bilinir. Ayrıca, polen, enerji verir, bağışıklık sistemini güçlendirir ve alerjik reaksiyonları azaltmaya yardımcı olabilir.</p>
-    </section>
-
-    <!-- Propolis Nedir? -->
-    <section id="propolis" class="content-box">
-        <h2>Propolis Nedir?</h2>
-        <img src="bal7.jpg" alt="Propolis resmi">
-        <p>Propolis, arıların bitkilerden topladığı reçineli maddelerdir. Arılar, propolisi kovandaki çatlakları kapatmak, petekleri dezenfekte etmek ve yabancı mikroorganizmalardan korunmak için kullanır. Propolis, antioksidan özelliklere sahiptir ve bağışıklık sistemini güçlendirir.</p>
-    </section>
-
-    <!-- Bağışıklık Sistemi -->
-    <section id="bagisiklik" class="content-box">
-        <h2>Bağışıklık Sistemi Nasıl Güçlendirilir?</h2>
-        <img src="bal8.jpg" alt="Bağışıklık Sistemi">
-        <p>Bal, polen ve propolis gibi arı ürünleri, bağışıklık sistemini güçlendirmek için etkili doğal kaynaklardır. Düzenli olarak bu ürünlerin tüketilmesi vücutta antioksidan seviyesini artırır, mikroplara karşı direnç oluşturur ve enfeksiyonlara karşı koruma sağlar. Ayrıca, arı ürünlerinin düzenli kullanımı, vücudu güçlendirir ve hastalıklara karşı daha dayanıklı hale getirir.</p>
-    </section>
-    <section id="bal-nedir" class="content-box">
-    <h2>Bal Nedir?</h2>
-
-    <div class="row">
-        <img src="bal_1.jpg" alt="Bal resmi">
-        <p>Bal, arıların çiçeklerden topladığı nektarın...</p>
+    <div class="content-box">
+        <img src="bal_1.jpg">
+        <h3>Doğal Çiçek Balı</h3>
+        <p>Katkısız, tamamen doğal ve enerji dolu.</p>
+        <a href="tel:05394883087" class="btn">Sipariş Ver</a>
     </div>
-</section>
 
-    <!-- İletişim -->
-    <section id="iletisim">
-        <h2>İletişim</h2>
-        <p><strong>Adres:</strong> Belgrad Ormanları/İstanbul</p>
-        <p><strong>Telefon:</strong> <a href="tel:05394883087">05394883087</a></p>
-        <p><strong>E-posta:</strong> <a href="mailto:muallimcoskun@gmail.com">muallimcoskun@gmail.com</a></p>
-        <p><strong>Firma:</strong> Katip Balları</p>
-    </section>
-    <section class="content-box">
-    <h3>Çam Balı</h3>
-    <img src="bal1.jpg" alt="">
-    <p>Doğal katkısız çam balı.</p>
-    <h3>₺250</h3>
-    <button class="btn">Satın Al</button>
-</section>
-    <div class="grid-container">
+    <div class="content-box">
+        <img src="bal2.jpg">
+        <h3>Organik Bal</h3>
+        <p>En saf haliyle sofranıza gelen lezzet.</p>
+        <a href="tel:05394883087" class="btn">Sipariş Ver</a>
+    </div>
 
-    <section id="bal-nedir" class="content-box">...</section>
-    <section id="aricilik" class="content-box">...</section>
-    <section id="arilarin-olumu" class="content-box">...</section>
-    <section id="bali-tarihi" class="content-box">...</section>
-    <section id="faydalar" class="content-box">...</section>
-    <section id="polen" class="content-box">...</section>
-    <section id="propolis" class="content-box">...</section>
-    <section id="bagisiklik" class="content-box">...</section>
+    <div class="content-box">
+        <img src="bal3.jpg">
+        <h3>Yayla Balı</h3>
+        <p>Yüksek rakımın eşsiz aroması.</p>
+        <a href="tel:05394883087" class="btn">Sipariş Ver</a>
+    </div>
+
+    <div class="content-box">
+        <img src="bal4.jpg">
+        <h3>Polen</h3>
+        <p>Doğal vitamin ve enerji deposu.</p>
+        <a href="tel:05394883087" class="btn">Sipariş Ver</a>
+    </div>
+
+    <div class="content-box">
+        <img src="bal5.jpg">
+        <h3>Propolis</h3>
+        <p>Bağışıklık için güçlü doğal destek.</p>
+        <a href="tel:05394883087" class="btn">Sipariş Ver</a>
+    </div>
+
+    <div class="content-box">
+        <img src="bal6.jpg">
+        <h3>Petek Bal</h3>
+        <p>Doğallığın en saf ve katkısız hali.</p>
+        <a href="tel:05394883087" class="btn">Sipariş Ver</a>
+    </div>
 
 </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Katip Balları | Tüm hakları saklıdır.</p>
-    </footer>
-<script>
-function toggleText(button) {
-    const text = button.previousElementSibling.querySelector(".more-text");
+<footer>
+    <p>📍 İstanbul | 📞 0539 488 30 87</p>
+    <p>© 2025 Katip Balları</p>
+</footer>
 
-    if (text.style.display === "inline") {
-        text.style.display = "none";
-        button.innerText = "Devamını Oku";
-    } else {
-        text.style.display = "inline";
-        button.innerText = "Kapat";
-    }
-}
-</script>
 </body>
 </html>
