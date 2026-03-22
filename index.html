@@ -24,6 +24,36 @@
     font-family: 'Segoe UI', Arial, sans-serif;
     background: linear-gradient(to bottom, #fff8e1, #fff);
 }
+        .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 sütun */
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+        /* Tablet */
+@media (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+        .content-box {
+    text-align: center;
+    height: 100%;
+}
+
+.content-box img {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Telefon */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* Sayfa genişliğini sınırla */
 section {
