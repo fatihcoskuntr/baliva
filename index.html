@@ -242,6 +242,23 @@ nav a:hover {
     background-color: white;
     color: #f39c12;
 }
+            .btn {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+            .more-text {
+    display: none;
+}
+
+.btn:hover {
+    background-color: #e67e22;
+}
 }
     </style>
 </head>
@@ -267,10 +284,12 @@ nav a:hover {
     <section id="bal-nedir" class="content-box">
         <h2>Bal Nedir?</h2>
         <img src="bal_1.jpg" alt="Bal resmi">
-        <p>Bal, arıların çiçeklerden topladığı nektarın arıların sindirim sisteminde kimyasal değişime uğraması sonucu oluşan tatlı, yapışkan bir üründür. Doğal olarak şeker, su, vitaminler, mineraller ve antioksidanlar içerir. Bal, tarih boyunca besin, şifa kaynağı ve tatlandırıcı olarak kullanılmıştır.</p>
-   
+        <p>Bal, arıların çiçeklerden topladığı nektarın...
+             <span class="more-text">Bal, arıların çiçeklerden topladığı nektarın arıların sindirim sisteminde kimyasal değişime uğraması sonucu oluşan tatlı, yapışkan bir üründür. Doğal olarak şeker, su, vitaminler, mineraller ve antioksidanlar içerir. Bal, tarih boyunca besin, şifa kaynağı ve tatlandırıcı olarak kullanılmıştır.</span>
+        </p>
+   <button class="btn" onclick="toggleText(this)">Devamını Oku</button>
     </section>
- <button class="btn">Devamını Oku</button>
+ 
     <!-- Arıcılık Nedir? -->
     <section id="aricilik" class="content-box">
         <h2>Arıcılık Nedir?</h2>
@@ -336,6 +355,13 @@ nav a:hover {
         <p><strong>E-posta:</strong> <a href="mailto:muallimcoskun@gmail.com">muallimcoskun@gmail.com</a></p>
         <p><strong>Firma:</strong> Katip Balları</p>
     </section>
+    <section class="content-box">
+    <h3>Çam Balı</h3>
+    <img src="bal1.jpg" alt="">
+    <p>Doğal katkısız çam balı.</p>
+    <h3>₺250</h3>
+    <button class="btn">Satın Al</button>
+</section>
     <div class="grid-container">
 
     <section id="bal-nedir" class="content-box">...</section>
@@ -353,6 +379,18 @@ nav a:hover {
     <footer>
         <p>&copy; 2025 Katip Balları | Tüm hakları saklıdır.</p>
     </footer>
+<script>
+function toggleText(button) {
+    const text = button.previousElementSibling.querySelector(".more-text");
 
+    if (text.style.display === "inline") {
+        text.style.display = "none";
+        button.innerText = "Devamını Oku";
+    } else {
+        text.style.display = "inline";
+        button.innerText = "Kapat";
+    }
+}
+</script>
 </body>
 </html>
