@@ -20,6 +20,30 @@
             color: #f1c40f; /* Sarı renk */
             text-align: center;
         }
+        {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(to bottom, #fff8e1, #fff);
+}
+
+/* Sayfa genişliğini sınırla */
+section {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Daha modern kutular */
+.content-box {
+    background-color: #fff;
+    padding: 25px;
+    margin: 30px auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.content-box:hover {
+    transform: translateY(-5px);
+}
 
         h1 {
             font-size: 3em;
@@ -67,6 +91,35 @@
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+        .row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* mobilde alt alta düşer */
+}
+
+.row img {
+    width: 45%;
+    max-width: 400px;
+}
+        h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+        .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.image-grid img {
+    width: 100%;
+}
+
+.row p {
+    width: 50%;
+}
+        
 
         /* Paragraf ve açıklama */
         p {
@@ -122,6 +175,33 @@
         #iletisim a:hover {
             color: #e67e22;
         }
+        @media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .row img,
+    .row p {
+        width: 100%;
+    }
+            nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 0 0 15px 15px;
+}
+
+nav a {
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: white;
+    color: #f39c12;
+}
+}
     </style>
 </head>
 <body>
@@ -197,6 +277,14 @@
         <img src="bal8.jpg" alt="Bağışıklık Sistemi">
         <p>Bal, polen ve propolis gibi arı ürünleri, bağışıklık sistemini güçlendirmek için etkili doğal kaynaklardır. Düzenli olarak bu ürünlerin tüketilmesi vücutta antioksidan seviyesini artırır, mikroplara karşı direnç oluşturur ve enfeksiyonlara karşı koruma sağlar. Ayrıca, arı ürünlerinin düzenli kullanımı, vücudu güçlendirir ve hastalıklara karşı daha dayanıklı hale getirir.</p>
     </section>
+    <section id="bal-nedir" class="content-box">
+    <h2>Bal Nedir?</h2>
+
+    <div class="row">
+        <img src="bal_1.jpg" alt="Bal resmi">
+        <p>Bal, arıların çiçeklerden topladığı nektarın...</p>
+    </div>
+</section>
 
     <!-- İletişim -->
     <section id="iletisim">
